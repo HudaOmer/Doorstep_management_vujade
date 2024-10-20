@@ -14,7 +14,7 @@ class LocationItem extends StatelessWidget {
     return Row(
       children: [
         Icon(Icons.location_on_outlined, color: color),
-        const SizedBox(width: 10),
+        const SizedBox(width: 5),
         Text(location, style: TextStyle(color: color)),
         const SizedBox(width: 20),
       ],
@@ -58,8 +58,19 @@ class ApatrmentItem extends StatelessWidget {
                   iconName: isWide
                       ? 'assets/images/buildings.jpeg'
                       : 'assets/images/villa.jpeg'),
-              const Text('AL Rayyan', style: TextStyle(fontSize: 13)),
-              const Text('2,000 SAR', style: TextStyle(fontSize: 13)),
+              Row(
+                children: const [
+                  SizedBox(width: 5),
+                  Text('AL Rayyan', style: TextStyle(fontSize: 13))
+                ],
+              ),
+              Row(
+                children: const [
+                  Icon(Icons.access_time, size: 20),
+                  SizedBox(width: 5),
+                  Text('15 Oct, 2024', style: TextStyle(fontSize: 13)),
+                ],
+              ),
               const LocationItem(location: 'Sudan')
             ],
           )),
