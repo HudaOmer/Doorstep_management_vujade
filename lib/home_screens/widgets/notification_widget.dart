@@ -12,7 +12,7 @@ class NotificationItem extends StatelessWidget {
       child: Center(
         child: Container(
           width: MediaQuery.of(context).size.width * 0.8,
-          height: 90,
+          height: 100,
           padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
             color: isRead ? contrastColor : Colors.white,
@@ -75,7 +75,7 @@ class NotificationHomeItem extends StatelessWidget {
       child: Center(
         child: Container(
           width: MediaQuery.of(context).size.width * 0.9,
-          height: 90,
+          height: 100,
           padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
             color: mainColor,
@@ -95,8 +95,8 @@ class NotificationHomeItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(width: 10.0),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Icon(Icons.notifications, size: 20),
                     Text('Notifications',
                         style: TextStyle(

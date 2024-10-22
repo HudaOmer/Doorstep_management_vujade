@@ -34,17 +34,17 @@ class TenantDataScreen extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.grey, fontWeight: FontWeight.w700)),
                 )),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
+              children: [
                 // SizedBox(width: 10),
                 ApatrmentItem(isWide: false),
                 ApatrmentItem(isWide: false)
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
+              children: [
                 // SizedBox(width: 10),
                 ApatrmentItem(isWide: false),
                 ApatrmentItem(isWide: false)

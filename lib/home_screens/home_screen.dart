@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../utils/colors.dart';
+import '../apartment_screens/apartment_list_screen.dart';
 import '../global_widgets/apartment_item.dart';
 import 'widgets/notification_widget.dart';
 
@@ -18,8 +19,8 @@ class HomePage extends StatelessWidget {
         toolbarHeight: appbarheight,
         iconTheme: IconThemeData(color: contrastColor),
         backgroundColor: Colors.white,
-        leading: Row(
-          children: const [
+        leading: const Row(
+          children: [
             SizedBox(width: 25),
             Icon(Icons.menu, size: 30),
           ],
@@ -46,21 +47,27 @@ class HomePage extends StatelessWidget {
                     'Scheduled Requests',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                   ),
-                  Text(
-                    'See All',
-                    style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: mainColor),
+                  GestureDetector(
+                    onTap: () => Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ApartmentListScreen())),
+                    child: Text(
+                      'See All',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: mainColor),
+                    ),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 10),
-            SingleChildScrollView(
+            const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: const [
+                  children: [
                     ApatrmentItem(isWide: false),
                     ApatrmentItem(isWide: false)
                   ],
@@ -83,11 +90,11 @@ class HomePage extends StatelessWidget {
                       const Icon(Icons.arrow_forward_ios, color: Colors.white)
                     ])),
             const SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 30.0, right: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     'Performance',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
@@ -100,9 +107,9 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
+                    children: [
                       PerformanceWidget(performance: 'Complete', value: 5),
                       SizedBox(height: 10),
                       PerformanceWidget(performance: 'Patchy', value: 1),

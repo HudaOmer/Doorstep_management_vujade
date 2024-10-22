@@ -58,14 +58,14 @@ class ApatrmentItem extends StatelessWidget {
                   iconName: isWide
                       ? 'assets/images/buildings.jpeg'
                       : 'assets/images/villa.jpeg'),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   SizedBox(width: 5),
                   Text('AL Rayyan', style: TextStyle(fontSize: 13))
                 ],
               ),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   Icon(Icons.access_time, size: 20),
                   SizedBox(width: 5),
                   Text('15 Oct, 2024', style: TextStyle(fontSize: 13)),
@@ -101,14 +101,13 @@ class HorizantalApatrmentItem extends StatelessWidget {
                   offset: const Offset(0, -2)),
             ],
           ),
-          child: Row(
+          child: const Row(
             children: [
-              const CustomIcon(
-                  height: 130, iconName: 'assets/images/buildings.jpeg'),
+              CustomIcon(height: 130, iconName: 'assets/images/buildings.jpeg'),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text('AL Rayyan', style: TextStyle(fontSize: 13)),
                   Text('2,000 SAR', style: TextStyle(fontSize: 13)),
                   LocationItem(location: 'Sudan')

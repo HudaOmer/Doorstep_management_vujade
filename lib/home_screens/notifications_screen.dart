@@ -19,11 +19,11 @@ class NotificationScreen extends StatelessWidget {
                   fontSize: 20,
                   fontWeight: FontWeight.w700)),
           leading: const Icon(Icons.arrow_back_ios, color: Colors.black)),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             SizedBox(height: 20),
             SizedBox(height: 10),
             NotificationItem(isRead: true),
