@@ -4,7 +4,7 @@ plugins{
     id "dev.futter.flutter-gradle-plugin"
 }
 
-buildscript {
+/*buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
         google()
@@ -16,7 +16,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-
+*/
 allprojects {
     repositories {
         google()
