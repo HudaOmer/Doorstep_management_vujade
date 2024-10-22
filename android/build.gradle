@@ -1,9 +1,9 @@
-plugins{
+/*plugins{
     id "com.android.application"
     id "kotlin-android"
     id "dev.futter.flutter-gradle-plugin"
 }
-
+*/
 /*buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
