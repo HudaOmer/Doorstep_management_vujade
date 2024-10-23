@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
-import 'apartment_screens/apartment_list_screen.dart';
+// import 'apartment_screens/apartment_list_screen.dart';
+import 'home_screens/navigation_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'DoorStep',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.orange),
-      home: const ApartmentListScreen(),
+      home: const NavigationScreen(),
       // home: isLoggedIn ? const NavigationScreen() : const LoginScreen()
     );
   }
