@@ -14,8 +14,8 @@ class LocationItem extends StatelessWidget {
     return Row(
       children: [
         Icon(Icons.location_on_outlined, color: color),
-        const SizedBox(width: 5),
-        Text(location, style: TextStyle(color: color)),
+        const SizedBox(width: 4),
+        Text(location, style: TextStyle(color: color, fontSize: 12)),
         const SizedBox(width: 20),
       ],
     );
@@ -62,14 +62,14 @@ class ApatrmentItem extends StatelessWidget {
               const Row(
                 children: [
                   SizedBox(width: 5),
-                  Text('AL Rayyan', style: TextStyle(fontSize: 13))
+                  Text('AL Rayyan', style: TextStyle(fontSize: 12))
                 ],
               ),
               const Row(
                 children: [
                   Icon(Icons.access_time, size: 20),
-                  SizedBox(width: 5),
-                  Text('15 Oct, 2024', style: TextStyle(fontSize: 13)),
+                  SizedBox(width: 4),
+                  Text('15 Oct, 2024', style: TextStyle(fontSize: 12)),
                 ],
               ),
               const LocationItem(location: 'Riyadh')
@@ -109,8 +109,8 @@ class HorizantalApatrmentItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('AL Rayyan', style: TextStyle(fontSize: 13)),
-                  Text('2,000 SAR', style: TextStyle(fontSize: 13)),
+                  Text('AL Rayyan', style: TextStyle(fontSize: 12)),
+                  Text('2,000 SAR', style: TextStyle(fontSize: 12)),
                   LocationItem(location: 'Sudan')
                 ],
               ),
