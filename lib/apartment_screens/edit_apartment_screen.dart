@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import '../utils/colors.dart';
-import 'widgets/apartment_tile.dart';
 
-class ApartmentListScreen extends StatefulWidget {
-  const ApartmentListScreen({super.key});
+class EditApartmentScreen extends StatelessWidget {
+  const EditApartmentScreen({super.key});
 
-  @override
-  State<ApartmentListScreen> createState() => _ApartmentListScreenState();
-}
-
-class _ApartmentListScreenState extends State<ApartmentListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +21,6 @@ class _ApartmentListScreenState extends State<ApartmentListScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ApartmentTileWidget(),
-            ApartmentTileWidget(),
-            ApartmentTileWidget(),
             SizedBox(height: 40),
           ],
         ),
