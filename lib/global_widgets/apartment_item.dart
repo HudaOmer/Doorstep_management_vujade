@@ -35,12 +35,12 @@ class ApatrmentItem extends StatelessWidget {
       padding: const EdgeInsets.all(15.0),
       child: Container(
           width: isWide ? 250 : 170,
-          height: 230,
+          height: 240,
           padding: const EdgeInsets.all(15.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(30), bottom: Radius.circular(30)),
+                top: Radius.circular(15), bottom: Radius.circular(15)),
             boxShadow: [
               BoxShadow(
                   color: Colors.black.withOpacity(0.2),
@@ -54,10 +54,11 @@ class ApatrmentItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomIcon(
-                  height: 130,
+                  height: 120,
                   iconName: isWide
                       ? 'assets/images/buildings.jpeg'
                       : 'assets/images/villa.jpeg'),
+              const SizedBox(height: 5),
               const Row(
                 children: [
                   SizedBox(width: 5),
@@ -71,7 +72,7 @@ class ApatrmentItem extends StatelessWidget {
                   Text('15 Oct, 2024', style: TextStyle(fontSize: 13)),
                 ],
               ),
-              const LocationItem(location: 'Sudan')
+              const LocationItem(location: 'Riyadh')
             ],
           )),
     );
@@ -92,7 +93,7 @@ class HorizantalApatrmentItem extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(30), bottom: Radius.circular(30)),
+                top: Radius.circular(15), bottom: Radius.circular(15)),
             boxShadow: [
               BoxShadow(
                   color: Colors.black.withOpacity(0.2),
