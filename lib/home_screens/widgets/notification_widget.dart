@@ -26,7 +26,7 @@ class NotificationItem extends StatelessWidget {
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 10.0),
+            padding: const EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 3.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +37,7 @@ class NotificationItem extends StatelessWidget {
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: isRead ? Colors.white : Colors.black)),
-                const SizedBox(height: 10.0),
+                const SizedBox(height: 5.0),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -89,12 +89,12 @@ class NotificationHomeItem extends StatelessWidget {
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 10.0),
+            padding: const EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 3.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(width: 10.0),
+                const SizedBox(width: 5.0),
                 const Row(
                   children: [
                     Icon(Icons.notifications, size: 20),

@@ -13,11 +13,13 @@ class NotificationScreen extends StatelessWidget {
       appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          title: Text(title,
-              style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700)),
+          title: Center(
+            child: Text(title,
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700)),
+          ),
           leading: const Icon(Icons.arrow_back_ios, color: Colors.black)),
       body: const SingleChildScrollView(
         child: Column(
