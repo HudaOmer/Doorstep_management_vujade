@@ -4,11 +4,12 @@ import '../../utils/colors.dart';
 import '../apartment_screens/apartment_list_screen.dart';
 import '../global_widgets/apartment_item.dart';
 import 'widgets/notification_widget.dart';
+import '../apartment_screens/apartment_requests_screen.dart';
 
 double appbarheight = 80;
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class HomePage extends StatelessWidget {
                     onTap: () => Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ApartmentListScreen())),
+                            builder: (context) => const ApartmentRequestsScreen())),
                     child: Text(
                       'See All',
                       style: TextStyle(
@@ -73,22 +74,29 @@ class HomePage extends StatelessWidget {
                   ],
                 )),
             const SizedBox(height: 30),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                height: 50,
-                padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                    color: contrastColor,
-                    borderRadius: BorderRadius.circular(15)),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Icon(Icons.home, color: Colors.white),
-                      const Text('List of Apartments',
-                          style: TextStyle(color: Colors.white)),
-                      SizedBox(width: MediaQuery.of(context).size.width * 0.3),
-                      const Icon(Icons.arrow_forward_ios, color: Colors.white)
-                    ])),
+            GestureDetector(
+              onTap: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ApartmentListScreen())),
+              child: Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 50,
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                      color: contrastColor,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Icon(Icons.home, color: Colors.white),
+                        const Text('List of Apartments',
+                            style: TextStyle(color: Colors.white)),
+                        SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.3),
+                        const Icon(Icons.arrow_forward_ios, color: Colors.white)
+                      ])),
+            ),
             const SizedBox(height: 30),
             const Padding(
               padding: EdgeInsets.only(left: 30.0, right: 30.0),

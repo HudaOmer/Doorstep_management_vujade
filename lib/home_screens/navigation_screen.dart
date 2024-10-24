@@ -5,7 +5,7 @@ import 'notifications_screen.dart';
 import '../utils/icon.dart';
 import 'home_screen.dart';
 import 'notes_screen.dart';
-import 'tenant_data_screen.dart';
+import '../apartment_screens/edit_apartment_screen.dart';
 
 double iconSize = 35;
 
@@ -19,9 +19,9 @@ class NavigationScreen extends StatefulWidget {
 class _NavigationScreenState extends State<NavigationScreen> {
   int currentIndex = 0;
   List<Widget> pages = [
-    const HomePage(),
+    const HomeScreen(),
     const NotesScreen(),
-    const TenantDataScreen(),
+    const EditApartmentScreen(),
     const NotificationScreen(),
     const LockTheDoorScreen(),
   ];
