@@ -5,14 +5,19 @@ class ColoredButton extends StatelessWidget {
   final IconData? icon;
   final String? text;
   final void Function() onPressed;
-  final double? size;
+  final double? width;
+  final double? height;
+
+  final double? fontSize;
   const ColoredButton(
       {super.key,
       required this.color,
       this.icon,
       this.text,
       required this.onPressed,
-      this.size = 0.8});
+      this.width = 0.8,
+      this.height = 50,
+      this.fontSize = 18});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +26,8 @@ class ColoredButton extends StatelessWidget {
       style: TextButton.styleFrom(backgroundColor: color),
       child: Container(
         alignment: Alignment.center,
-        height: 50,
-        width: MediaQuery.of(context).size.width * size!,
+        height: height,
+        width: MediaQuery.of(context).size.width * width!,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,10 +35,10 @@ class ColoredButton extends StatelessWidget {
             if (icon != null && text != null) const SizedBox(width: 20),
             if (text != null)
               Text(text!,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontFamily: "Saken",
-                      fontSize: 18,
+                      fontSize: fontSize,
                       fontWeight: FontWeight.w700)),
           ],
         ),
