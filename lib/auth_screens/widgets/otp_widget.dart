@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/colors.dart';
+
 class OTPWidget extends StatefulWidget {
   const OTPWidget({super.key});
 
@@ -48,13 +50,16 @@ class _OTPWidgetState extends State<OTPWidget> {
       width: 50,
       height: 60,
       child: TextField(
+        cursorColor: mainColor,
         controller: controller,
         focusNode: focusNode,
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         maxLength: 1,
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
+        decoration: InputDecoration(
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: mainColor, width: 2)),
+          border: const OutlineInputBorder(),
           counterText: '',
         ),
         onChanged: (value) {
