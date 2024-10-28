@@ -54,8 +54,14 @@ class _ChatScreenState extends State<ChatScreen> {
         elevation: 0,
         iconTheme: IconThemeData(color: contrastColor),
         backgroundColor: Colors.white,
-        title: const Center(
-            child: Text('Chat    ', style: TextStyle(fontSize: 20))),
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            CircleAvatar(radius: 20),
+            SizedBox(width: 10),
+            Text('SomeOne', style: TextStyle(fontSize: 12))
+          ],
+        ),
         leading: GestureDetector(
             onTap: () => Navigator.pushReplacement(
                 context,
