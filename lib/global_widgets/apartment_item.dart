@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/colors.dart';
 import 'custom_icon.dart';
 
 class LocationItem extends StatelessWidget {
@@ -16,7 +17,6 @@ class LocationItem extends StatelessWidget {
         Icon(Icons.location_on_outlined, color: color),
         const SizedBox(width: 4),
         Text(location, style: TextStyle(color: color, fontSize: 12)),
-        const SizedBox(width: 20),
       ],
     );
   }
@@ -80,18 +80,23 @@ class ApatrmentItem extends StatelessWidget {
 }
 
 class HorizantalApatrmentItem extends StatelessWidget {
-  const HorizantalApatrmentItem({super.key});
+  final double? size;
+  final Color? color;
+  final Color? textColor;
+
+  const HorizantalApatrmentItem(
+      {super.key, this.size, this.color, this.textColor});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(10.0),
       child: Container(
-          width: 450,
-          height: 120,
+          width: size ?? 450,
+          height: 100,
           padding: const EdgeInsets.all(15.0),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: color ?? Colors.white,
             borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(15), bottom: Radius.circular(15)),
             boxShadow: [
@@ -102,16 +107,22 @@ class HorizantalApatrmentItem extends StatelessWidget {
                   offset: const Offset(0, -2)),
             ],
           ),
-          child: const Row(
+          child: Row(
             children: [
-              CustomIcon(height: 130, iconName: 'assets/images/buildings.jpeg'),
+              const CustomIcon(
+                  height: 120, iconName: 'assets/images/buildings.jpeg'),
+              const SizedBox(width: 15),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('AL Rayyan', style: TextStyle(fontSize: 12)),
-                  Text('2,000 SAR', style: TextStyle(fontSize: 12)),
-                  LocationItem(location: 'Sudan')
+                  Text('AL Rayyan',
+                      style: TextStyle(
+                          color: textColor ?? Colors.black, fontSize: 12)),
+                  Text('11 AM - 12 AM',
+                      style: TextStyle(
+                          color: textColor ?? Colors.black, fontSize: 9)),
+                  LocationItem(location: 'Sudan', color: textColor ?? mainColor)
                 ],
               ),
             ],
