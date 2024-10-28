@@ -24,9 +24,9 @@ class IncreaseDecreaseWidget extends StatelessWidget {
               spacing: 3,
               textStyle: const TextStyle(color: Colors.grey),
               incrementIcon:
-                  Icon(Icons.add_circle, color: contrastColor, size: 30),
+                  Icon(Icons.add_circle, color: contrastColor, size: 20),
               decrementIcon:
-                  Icon(Icons.remove_circle, color: contrastColor, size: 30)),
+                  Icon(Icons.remove_circle, color: contrastColor, size: 20)),
         ),
       ],
     );
