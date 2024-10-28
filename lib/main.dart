@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DoorStep',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.orange),
+      theme: ThemeData(colorSchemeSeed: Colors.orange),
       home: const LoginScreen(),
       // home: isLoggedIn ? const NavigationScreen() : const LoginScreen()
     );
