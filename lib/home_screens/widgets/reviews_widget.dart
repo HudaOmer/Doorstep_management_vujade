@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../home_screens/tenant_data_screen.dart';
 import '../../models/review.dart';
 import '../../utils/colors.dart';
 
@@ -15,7 +16,13 @@ class ReviewsWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              CircleAvatar(radius: 25, backgroundColor: Colors.orange[100]),
+              GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TenantDataScreen())),
+                  child: CircleAvatar(
+                      radius: 25, backgroundColor: Colors.orange[100])),
               const SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

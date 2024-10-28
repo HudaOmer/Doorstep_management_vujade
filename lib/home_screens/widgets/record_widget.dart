@@ -8,16 +8,18 @@ class RecordWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(width: 15),
         Icon(Icons.check_circle, color: isLocked ? contrastColor : mainColor),
-        const SizedBox(width: 5),
+        const SizedBox(width: 10),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(isLocked ? 'Locked' : 'Opened',
                 style:
                     const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 10),
             const Text('Sun, Jul 28',
                 style: TextStyle(
                     color: Colors.grey,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../utils/colors.dart';
 import '../apartment_screens/apartment_list_screen.dart';
+import '../apartment_screens/scheduled_requests_screen.dart';
 import '../global_widgets/apartment_item.dart';
 import 'widgets/notification_widget.dart';
 import '../apartment_screens/apartment_requests_screen.dart';
@@ -44,15 +45,24 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'Scheduled Requests',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const ScheduledRequestsScreen())),
+                    child: const Text(
+                      'Scheduled Requests',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                    ),
                   ),
                   GestureDetector(
                     onTap: () => Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ApartmentRequestsScreen())),
+                            builder: (context) =>
+                                const ApartmentRequestsScreen())),
                     child: Text(
                       'See All',
                       style: TextStyle(

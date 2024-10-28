@@ -23,12 +23,11 @@ class LockTheDoorScreen extends StatelessWidget {
         leading: const Icon(Icons.arrow_back_ios),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.1),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -45,23 +44,27 @@ class LockTheDoorScreen extends StatelessWidget {
             const RecordWidget(isLocked: true),
             const RecordWidget(isLocked: false),
             const RecordWidget(isLocked: false),
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
             const Text('Automatic Shutdown',
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 20),
             const Row(
               children: [
                 Icon(Icons.access_time),
+                SizedBox(width: 10),
                 ApartmentInsideFieldWidget(title: '12:00 PM', hint: 'X'),
               ],
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
             const Row(
               children: [
                 Icon(Icons.check_circle_outline_rounded),
+                SizedBox(width: 10),
                 Text('Alert if door remains open for a long time',
                     style: TextStyle(fontSize: 12)),
               ],
             ),
+            const SizedBox(height: 20),
             Center(
               child: ColoredButton(
                   text: 'Done', color: contrastColor, onPressed: () {}),
