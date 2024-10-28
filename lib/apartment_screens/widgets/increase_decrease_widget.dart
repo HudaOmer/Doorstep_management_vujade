@@ -12,7 +12,8 @@ class IncreaseDecreaseWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(width: 100, child: Text(data)),
+        SizedBox(
+            width: 75, child: Text(data, style: const TextStyle(fontSize: 12))),
         SizedBox(
           width: 100,
           child: SpinBox(
@@ -22,8 +23,10 @@ class IncreaseDecreaseWidget extends StatelessWidget {
               cursorColor: mainColor,
               spacing: 3,
               textStyle: const TextStyle(color: Colors.grey),
-              incrementIcon: Icon(Icons.add_circle, color: contrastColor),
-              decrementIcon: Icon(Icons.remove_circle, color: contrastColor)),
+              incrementIcon:
+                  Icon(Icons.add_circle, color: contrastColor, size: 30),
+              decrementIcon:
+                  Icon(Icons.remove_circle, color: contrastColor, size: 30)),
         ),
       ],
     );

@@ -38,75 +38,73 @@ class EditApartmentScreen extends StatelessWidget {
           Container(height: 20)
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 0),
-        child: Container(
-          decoration: const BoxDecoration(color: Colors.white),
-          child: SingleChildScrollView(
-              padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.1),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
+      body: Container(
+        decoration: const BoxDecoration(color: Colors.white),
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.1),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ApartmentFieldWidget(
-                          size: 0.35,
-                          label: 'Estate Name',
-                          isObsecure: false,
-                          hint: 'Name'),
-                      SizedBox(width: 20),
-                      ApartmentFieldWidget(
-                          size: 0.3,
-                          label: 'Price',
-                          isObsecure: false,
-                          hint: '0.000 SAR'),
-                    ],
-                  ),
-                  const ApartmentFieldWidget(
+                  ApartmentFieldWidget(
                       size: 0.35,
-                      label: 'Location',
+                      label: 'Estate Name',
                       isObsecure: false,
-                      hint: 'location'),
-                  const ApartmentFieldWidget(
-                      size: 0.8,
-                      minLines: 3,
-                      maxLines: 5,
+                      hint: 'Name'),
+                  SizedBox(width: 20),
+                  ApartmentFieldWidget(
+                      size: 0.3,
+                      label: 'Price',
                       isObsecure: false,
-                      label: 'Description',
-                      hint: 'Add your description'),
-                  const SizedBox(height: 30),
-                  const Row(
+                      hint: '0.000 SAR'),
+                ],
+              ),
+              const ApartmentFieldWidget(
+                  size: 0.35,
+                  label: 'Location',
+                  isObsecure: false,
+                  hint: 'location'),
+              const ApartmentFieldWidget(
+                  size: 0.8,
+                  minLines: 3,
+                  maxLines: 5,
+                  isObsecure: false,
+                  label: 'Description',
+                  hint: 'Add your description'),
+              const SizedBox(height: 30),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IncreaseDecreaseWidget(data: 'Bedrooms'),
-                          IncreaseDecreaseWidget(data: 'Loungs'),
-                          IncreaseDecreaseWidget(data: 'Toilts'),
-                        ],
-                      ),
-                      Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ApartmentInsideFieldWidget(
-                                title: 'Category', hint: 'Families'),
-                            ApartmentInsideFieldWidget(
-                                title: 'Space', hint: '120 m2'),
-                            ApartmentInsideFieldWidget(
-                                title: 'Coverage', hint: '5G'),
-                          ])
+                      IncreaseDecreaseWidget(data: 'Bedrooms'),
+                      IncreaseDecreaseWidget(data: 'Loungs'),
+                      IncreaseDecreaseWidget(data: 'Toilts'),
                     ],
                   ),
-                  const SizedBox(height: 30),
-                  Center(
-                    child: ColoredButton(
-                        text: 'Add', color: contrastColor, onPressed: () {}),
-                  ),
+                  Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ApartmentInsideFieldWidget(
+                            title: 'Category', hint: 'Families'),
+                        ApartmentInsideFieldWidget(
+                            title: 'Space', hint: '120 m2'),
+                        ApartmentInsideFieldWidget(
+                            title: 'Coverage', hint: '5G'),
+                      ])
                 ],
-              )),
+              ),
+              const SizedBox(height: 30),
+              Center(
+                child: ColoredButton(
+                    text: 'Add', color: contrastColor, onPressed: () {}),
+              ),
+            ],
+          ),
         ),
       ),
     );

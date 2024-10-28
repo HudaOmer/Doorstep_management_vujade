@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../global_widgets/custom_appbar.dart';
 import '../utils/colors.dart';
+import '../global_widgets/custom_appbar.dart';
+import '../global_widgets/apartment_item.dart';
 
 class ScheduledRequestsScreen extends StatelessWidget {
   const ScheduledRequestsScreen({super.key});
@@ -11,7 +12,8 @@ class ScheduledRequestsScreen extends StatelessWidget {
       backgroundColor: contrastColor,
       appBar: CustomAppBar(
           color: contrastColor,
-          title: 'Scheduledd Requests    ',
+          title: 'Scheduling    ',
+          onTap: () => Navigator.pop(context),
           body: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,20 +49,61 @@ class ScheduledRequestsScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10),
         child: Container(
           decoration: const BoxDecoration(color: Colors.white),
-          child: const SingleChildScrollView(
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Padding(
-                  padding: EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [],
+                    children: [
+                      const Text('Ongoing',
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w700)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(left: 8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                TimeWidget(time: '9 AM'),
+                                TimeWidget(time: '1 AM'),
+                                TimeWidget(time: '11 AM'),
+                                TimeWidget(time: '12 PM'),
+                                TimeWidget(time: '1 PM'),
+                                TimeWidget(time: '2 PM'),
+                                TimeWidget(time: '3 PM'),
+                                TimeWidget(time: '4 PM'),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              HorizantalApatrmentItem(
+                                  textColor: Colors.white,
+                                  size: 255,
+                                  color: mainColor),
+                              const BrWidget(),
+                              HorizantalApatrmentItem(
+                                  textColor: Colors.white,
+                                  size: 255,
+                                  color: contrastColor),
+                            ],
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 30),
+                      const SizedBox(height: 30),
+                    ],
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
               ],
             ),
           ),
@@ -101,6 +144,47 @@ class WeekdayDateWidget extends StatelessWidget {
                   fontSize: 11)),
         ],
       ),
+    );
+  }
+}
+
+class BrWidget extends StatelessWidget {
+  const BrWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          Container(
+            width: 5,
+            height: 5,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5), color: Colors.grey),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.7,
+            height: 1,
+            decoration: const BoxDecoration(color: Colors.grey),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TimeWidget extends StatelessWidget {
+  final String time;
+  const TimeWidget({super.key, required this.time});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20.0, top: 20),
+      child: Text(time,
+          style: const TextStyle(
+              color: Colors.grey, fontSize: 12, fontWeight: FontWeight.w400)),
     );
   }
 }

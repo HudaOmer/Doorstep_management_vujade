@@ -11,11 +11,11 @@ class ReqApatrmentItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(12.0),
       child: Container(
         width: MediaQuery.of(context).size.width * 0.9,
-        height: 120,
-        padding: const EdgeInsets.all(15.0),
+        height: 130,
+        padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
@@ -32,35 +32,42 @@ class ReqApatrmentItem extends StatelessWidget {
             const CustomIcon(
                 height: 80, iconName: 'assets/images/buildings.jpeg'),
             const SizedBox(width: 15),
-            const Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('AL Rayyan', style: TextStyle(fontSize: 13)),
-                Text('2,000 SAR', style: TextStyle(fontSize: 13)),
-                LocationItem(location: 'Sudan')
+                const Text('AL Rayyan', style: TextStyle(fontSize: 12)),
+                const Text('2,000 SAR', style: TextStyle(fontSize: 12)),
+                const SizedBox(height: 5),
+                Row(
+                  children: [
+                    const LocationItem(location: 'Sudan'),
+                    const SizedBox(width: 8),
+                    GestureDetector(
+                        onTap: () => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ChatScreen())),
+                        child: Icon(Icons.message_rounded, color: mainColor)),
+                    const SizedBox(width: 8),
+                    SizedBox(
+                      height: 30,
+                      child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                              backgroundColor: contrastColor,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5))),
+                          child: const Text('Reject',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w700))),
+                    ),
+                  ],
+                )
               ],
             ),
-            const SizedBox(width: 15),
-            Row(
-              children: [
-                GestureDetector(
-                    onTap: () => Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ChatScreen())),
-                    child: Icon(Icons.message_rounded, color: mainColor)),
-                const SizedBox(width: 10),
-                TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(backgroundColor: contrastColor),
-                    child: const Text('Reject',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700))),
-              ],
-            )
           ],
         ),
       ),
